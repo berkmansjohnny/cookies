@@ -15,8 +15,9 @@
 	<meta name="robots" contents="[]" />
 
 	<!-- styles -->
+	<link rel="stylesheet" href="assets/css/normalize.css" />
 	<link rel="stylesheet" href="assets/css/cookies.css" />
-
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<!-- icons -->
 	<link rel="shortcut icon" href="cookie.ico" />
 	<link rel="apple-touch-icon-precomposed" href="assets/img/apple-touch-icon-precomposed.png" />
@@ -32,21 +33,54 @@
 
 <body>
 <header>
-	<h1>Cookies.css</h1>
+	<h1>Cookies.css<br>	<span><em>Easy-to-use cookiebars</em></span></h1>
 </header>
 <section class="first">
-	<div class="cookie bar">
-		<p>Dit is een cookiebar</p>
-		<a href="#"></a>
+	<div class="cookie note top">
+		<div class="cookie--img">
+			<img src="assets/img/cookie-s.png" alt="cookie">
+		</div>
+		<div class="cookie--text">
+			<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
+		</div>
+		<div class="cookie--close">
+			<a href="#"><span class="lnr lnr-cross-circle"></span></a>
+		</div>
 	</div>
+
+	<div class="cookie notification bottom">
+		<div class="cookie--text">
+			<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
+		</div>
+		<div class="cookie--close">
+			<a href="#">Sluiten <span class="lnr lnr-cross"></span></a>
+		</div>
+	</div>
+
+	<div class="cookie triangle bottom">
+		<div class="cookie--text">
+			<p>Wij maken gebruik van cookies om uw surfervaring op deze website makkelijker te maken.<a href="#">Meer weten</a></p>
+		</div>
+		<div class="cookie--close">
+			<a href="#"><span class="lnr lnr-cross"></span></a>
+		</div>
+	</div>
+
+	<div class="cookie monster">
+
+		<div class="cookie--text">
+			<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
+		</div>
+		<div class="cookie--close">
+			<a href="#"><span class="lnr lnr-cross-circle"></span></a>
+		</div>
+		<div class="cookie--img">
+			<img src="assets/img/cookiemonster.jpg" alt="cookie monster">
+		</div>
+	</div>
+
+
 </section>
-
-
-
-	<footer>
-		<small> &copy; <?php echo(date('Y')) ?> </small>
-	</footer>
-
 
 	<!-- foot scripts -->
 	<script src="assets/js/main.js"></script>

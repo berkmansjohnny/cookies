@@ -1,31 +1,157 @@
 /* CSS file */
 body{
   background-color: #2c3e50;
-  text-align: center;
+  font-family: sans-serif;
   position: relative;
-  overflow:hidden;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  font-size: 16px;
 }
-header,
-footer{
-  padding: 4rem 0;
+img{
+  max-width: 100%;
 }
-footer{
+p{
+  font-size: 0.875rem;
+  line-height: 1.250rem;
+  margin: 0;
+}
+a{
+  color: #2980b9;
+  text-decoration: none;
+}
+header{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%);
+  color: #FFF;
+  text-align: center;
+}
+header span{
+  font-size: 1rem;
+  opacity: 0.3;
+}
+.cookie--close span.lnr{
+  font-size: 1.5rem;
+}
+
+/*
+ GENERAL
+*/
+.cookie{
+  z-index: 9;
+  position: absolute;
+}
+
+/*
+ The cookie monster
+*/
+
+.monster{
+  width: calc(250px - 3rem);
+  padding: 1.5rem 1.5rem 0;
+  border-radius: 5px;
+  box-shadow: 0 0px 30px 0px rgba(0,0,0,0.5);
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #FFF;
+}
+.monster .cookie--close{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.monster .cookie--img img{
+  float: left;
+}
+
+
+/*
+ Default note on top of website
+*/
+.note{
+  text-align: left;
+  background-color: #FFF;
+  padding: 1.5rem;
+  display: flex;
+}
+
+.note .cookie--img,
+.note .cookie--close{
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
+.note .cookie--close a{
+  align-self: center;
+}
+.note .cookie--text{
+  float: left;
+  width: 90%;
+}
+
+/*
+ NOTIFICATION COOKIE
+*/
+.notification{
+  max-width: 65rem; /* This should be the same number as the max-width of the grid you're using. */
+  text-align: left;
+  background-color: #FFF;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+.notification .cookie--text{
+  padding: 1rem;
+}
+
+.notification .cookie--close{
+  display: flex;
+  padding: 1rem;
+  border-left: 1px solid rgba(0,0,0,0.3);
+  background: transparent;
+  min-width: 4.375em; /* 70px: the width of the text and the icon  */
+}
+.notification .cookie--close span.lnr{
+  font-size: 1rem;
+}
+.notification .cookie--close a{
+  align-self: center;
+}
+
+/*
+ TRIANGLE COOKIE
+*/
+.triangle{
+  width: 205px; /* breedte driehoek (160px) + padding (25px)  */
+  text-align: center;
+}
+.triangle::after{
+  content: '';
+  border: 160px solid #FFF;
+  border-top-color: transparent;
+  border-right-color: transparent;
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -1;
+}
+
+.triangle .cookie--text{
+  padding: 35px 25px;
+}
+.triangle .cookie--close{
+  position: absolute;
+  top: -25px;
+  left: 0;
   right: 0;
 }
 
 
-.bar{
-  position: absolute;
-  bottom: 3vh;
-  z-index: 9999;
-  left: 0;
-  right: 0;
-  width: 75vw;
-  background-color: #FFF;
-  margin: 0 auto;
+.bottom{
+  bottom: 0;
+}
+.top{
+  top: 0;
 }
