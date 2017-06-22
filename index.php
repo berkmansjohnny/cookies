@@ -50,14 +50,14 @@
 <header>
 	<h1>Cookies.css<br>	<span><em>Easy-to-use cookiebars</em></span></h1>
 	<div class="buttons">
-		<a href="#" class="showNote">note</a>
-		<a href="#" class="showNote">notification</a>
-		<a href="#" class="showNote">triangle</a>
-		<a href="#" class="show-monster">monster</a>
+		<a href="#" class="btn btn--show show-note">note</a>
+		<a href="#" class="btn btn--show show-notification">notification</a>
+		<a href="#" class="btn btn--show show-triangle">triangle</a>
+		<a href="#" class="btn btn--show show-monster">monster</a>
 	</div>
 </header>
 <section class="first">
-	<div class="cookie note top animated" id="close-note">
+	<div class="cookie note top ghost animated" id="close-note">
 		<div class="cookie--img">
 			<img src="assets/img/cookie-s.png" alt="cookie">
 		</div>
@@ -69,7 +69,7 @@
 		</div>
 	</div>
 
-	<div class="cookie notification bottom animated" >
+	<div class="cookie notification bottom ghost animated" >
 		<div class="cookie--text">
 			<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
 		</div>
@@ -91,6 +91,10 @@
 		<div class="cookie--text">
 			<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
 		</div>
+		<div class="cookie--buttons text-center">
+			<a href="#" class="btn btn--agree">Ik ga akkoord</a>
+			<a href="#" class="btn btn--disagree">Ik ben niet akkoord</a>
+		</div>
 		<div class="cookie--close">
 			<a href="#"><span class="lnr lnr-cross-circle"></span></a>
 		</div>
@@ -101,16 +105,13 @@
 
 
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $(".cookie--close").click(function(){
-        $(".cookie").toggleClass("hidden",true);
+    $(".btn--agree").click(function(){
+         this.parentNode.toggleClass("ghost",true);
     });
     $(".show-monster").click(function(){
-			$(".cookie").toggleClass("hidden",false);
-    });
-    $(".show-note").click(function(){
 			$(".cookie").toggleClass("hidden",false);
     });
 });
