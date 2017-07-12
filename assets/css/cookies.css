@@ -2,11 +2,13 @@
 VARS
 */
 :root{
-  --font-size   : 0.875rem;
+  --font-size     : 0.875rem;
   --color-truce   : #FFF;
-  --bg-note   : #FFF;
+  --color-body    : #2980b9;
+  --color-link    : #2980b9;
+  --bg-note       : #FFF;
   --color-abyss   : #000;
-  --border-radius: 5px;
+  --border-radius : 5px;
   --transition    : all 0.3s ease-in-out;
 }
 
@@ -14,7 +16,7 @@ VARS
 CSS file
 */
 body{
-  background-color: #2c3e50;
+  background-color: var(--color-body);
   font-family: sans-serif;
   position: relative;
   width: 100vw;
@@ -30,16 +32,14 @@ p{
   margin: 0;
 }
 a{
-  color: #2980b9;
+  color: var(--color-body);
   text-decoration: none;
   font-size: var(--font-size);
 }
 .ghost,
 .hidden{
   opacity: 0;
-}
-.show{
-  opacity: 1;
+  z-index: 0!important;
 }
 .text-center{
   text-align: center;
@@ -49,7 +49,7 @@ header{
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%);
-  color: #FFF;
+  color: var(--color-truce);
   text-align: center;
 }
 header span{
@@ -74,13 +74,13 @@ header span{
   transition: var(--transition);
 }
 .btn--agree{
-  background: #2980b9;
+  background: var(--color-link);
   color: var(--color-truce);;
 }
 .btn--agree:hover{
-  border-color: #2980b9;
+  border-color: var(--color-link);
   background: var(--color-truce);;
-  color: #2980b9;
+  color: var(--color-link);
 }
 .btn--disagree{
   background: #949494;
@@ -93,10 +93,10 @@ header span{
 }
 .btn--show{
   background: var(--color-truce);
-  color: #2c3e50;
+  color: var(--color-body);
 }
 .btn--show:hover{
-  background-color: #2c3e50;
+  background-color: var(--color-body);
   border-color: var(--color-truce);
   color: var(--color-truce);
 }
@@ -118,6 +118,7 @@ header span{
 
 .monster{
   width: calc(20vw - 3rem);
+  min-width: 250px;
   padding: 1.5rem 1.5rem 0;
   border-radius: var(--border-radius);
   box-shadow: 0 0px 30px 0px rgba(0,0,0,0.5);
@@ -146,9 +147,15 @@ header span{
   animation-name: slideInDown;
 }
 
-.note .cookie--img,
+.note .cookie--img{
+  width: 3%;
+  margin: 0 1%;
+}
 .note .cookie--close{
   width: 5%;
+}
+.note .cookie--img,
+.note .cookie--close{
   display: flex;
   justify-content: center;
 }
