@@ -10,6 +10,7 @@ VARS
   --color-abyss   : #000;
   --border-radius : 5px;
   --transition    : all 0.3s ease-in-out;
+  --cookie-shadow : 0 0px 30px 0px rgba(0,0,0,0.3);
 }
 
 /*
@@ -40,6 +41,8 @@ a{
 .hidden{
   opacity: 0;
   z-index: 0!important;
+  visibility: hidden;
+  display: none!important;
 }
 .text-center{
   text-align: center;
@@ -48,7 +51,7 @@ a{
 header{
   position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%,-50%);
   color: var(--color-truce);
   text-align: center;
 }
@@ -61,8 +64,12 @@ header span{
 }
 
 /*
- Buttons
+ Buttons and links
 */
+.link{
+  color: var(--color-truce);
+  padding: 0 5px;
+}
 .btn{
   display: inline-block;
   font-size: var(--font-size);
@@ -75,7 +82,7 @@ header span{
 }
 .btn--agree{
   background: var(--color-link);
-  color: var(--color-truce);;
+  color: var(--color-truce);
 }
 .btn--agree:hover{
   border-color: var(--color-link);
@@ -121,9 +128,8 @@ header span{
   min-width: 250px;
   padding: 1.5rem 1.5rem 0;
   border-radius: var(--border-radius);
-  box-shadow: 0 0px 30px 0px rgba(0,0,0,0.5);
+  box-shadow: var(--cookie-shadow);
   background-color: var(--color-truce);
-  right: 1rem; bottom: 1rem;
   animation-name: bounceInUp;
 }
 .monster .cookie--close{
@@ -135,7 +141,6 @@ header span{
   float: left;
 }
 
-
 /*
  Default note on top of website
 */
@@ -144,12 +149,14 @@ header span{
   background-color: var(--bg-note);
   padding: 1.5rem;
   display: flex;
-  animation-name: slideInDown;
+  box-shadow: var(--cookie-shadow);
 }
 
 .note .cookie--img{
   width: 3%;
   margin: 0 1%;
+  max-width: 40px;
+  max-height: 40px;
 }
 .note .cookie--close{
   width: 5%;
@@ -179,7 +186,7 @@ header span{
   width: 100%;
   left: 0;
   right: 0;
-  animation-name: slideInUp;
+  box-shadow: var(--cookie-shadow);
 }
 .notification .cookie--text{
   padding: 1rem;
@@ -187,10 +194,11 @@ header span{
 
 .notification .cookie--close{
   display: flex;
+  justify-content: center;
   padding: 1rem;
-  border-left: 1px solid rgba(0,0,0,0.3);
+  border-left: 1px solid rgba(0,0,0,0.2);
   background: transparent;
-  min-width: 4.375em; /* 70px: the width of the text and the icon  */
+  min-width: 6em; /* the width of the text and the icon  */
 }
 .notification .cookie--close span.lnr{
   font-size: 1rem;
@@ -205,16 +213,11 @@ header span{
 .triangle{
   width: 205px; /* breedte driehoek (160px) + padding (25px)  */
   text-align: center;
-  animation-name: slideInLeft;
 }
 .triangle::after{
   content: '';
   border: 160px solid #FFF;
-  border-top-color: transparent;
-  border-right-color: transparent;
   position: absolute;
-  bottom: 0;
-  left: 0;
   z-index: -1;
 }
 
@@ -231,7 +234,37 @@ header span{
 /*
  POSITION OF THE NOTE
 */
-.left{ left: 0; }
-.right{ right: 0; }
+.monster.left{ left: 1rem; }
+.monster.right{ right: 1rem; }
+.monster.bottom{ bottom: 1rem; }
+.monster.top{ top: 1rem; }
+
+.triangle.top::after{ top: 0; }
+.triangle.bottom::after{ bottom: 0; }
+.triangle.bottom.left::after{
+  border-bottom-color: #FFF;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.triangle.left{ left: 0; }
+.triangle.left::after{
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  left: 0;
+}
+.triangle.right{ right: 0; }
+.triangle.right::after{
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  right: 0;
+}
+.triangle.bottom.right::after{
+  border-bottom-color: #FFF;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
 .bottom{ bottom: 0; }
 .top{ top: 0; }
+.left{ left: 0; }
+.right{ right: 0; }

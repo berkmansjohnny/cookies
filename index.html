@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
 	<meta charset="utf-8" />
@@ -38,8 +38,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/apple-touch-icon-72x72-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/apple-touch-icon-114x114-precomposed.png" />
 
-<!-- head scripts -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 </head>
@@ -49,15 +47,21 @@
 	<header>
 		<h1>Cookies.css<br>	<span><em>Ready-to-use cookiebars</em> v.0.0.1</span></h1>
 		<div class="buttons">
-			<a href="#" class="btn btn--show" id="show-1">note</a>
-			<a href="#" class="btn btn--show" id="show-2">Notification</a>
-			<a href="#" class="btn btn--show" id="show-3">Triangle</a>
-			<a href="#" class="btn btn--show" id="show-4">Monster</a>
+			<a href="#" class="btn btn--show" id="show-0">Note</a>
+			<a href="#" class="btn btn--show" id="show-1">Notification</a>
+			<a href="#" class="btn btn--show" id="show-2">Triangle</a>
+			<a href="#" class="btn btn--show" id="show-3">Monster</a>
 
 		</div>
+		<div class="links">
+			<a href="#" class="link" id="top">Top</a>
+			<a href="#" class="link" id="bottom">Bottom</a>
+			<a href="#" class="link" id="left">Left</a>
+			<a href="#" class="link" id="right">Right</a>
+		</div>
 	</header>
-	<section class="first">
-		<div class="cookie note top ghost" id="cookie-1">
+	<section>
+		<div class="cookie note ghost" id="cookie-0">
 			<div class="cookie--img">
 				<img src="assets/img/cookie-m.png" alt="cookie">
 			</div>
@@ -69,16 +73,16 @@
 			</div>
 		</div>
 
-		<div class="cookie notification bottom ghost" id="cookie-2">
+		<div class="cookie notification bottom ghost" id="cookie-1">
 			<div class="cookie--text">
 				<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
 			</div>
 			<div class="cookie--close">
-				<a href="#">Sluiten <span class="lnr lnr-cross"></span></a>
+				<a href="#">Ik begrijp het <span class="lnr lnr-thumbs-up"></span></a>
 			</div>
 		</div>
 
-		<div class="cookie triangle bottom ghost" id="cookie-3">
+		<div class="cookie triangle bottom left ghost" id="cookie-2">
 			<div class="cookie--text">
 				<p>Wij maken gebruik van cookies om uw surfervaring op deze website makkelijker te maken.<a href="#">Meer weten</a></p>
 			</div>
@@ -87,7 +91,7 @@
 			</div>
 		</div>
 
-		<div class="cookie monster ghost" id="cookie-4">
+		<div class="cookie monster bottom right ghost" id="cookie-3">
 			<div class="cookie--text">
 				<p>Om je beter en persoonlijker te helpen, gebruiken wij cookies en vergelijkbare technieken. Met de cookies volgen wij en derde partijen jouw internetgedrag binnen onze site. Hiermee tonen we advertenties op basis van jouw interesse en kun je informatie delen via social media. Als je verdergaat op onze website gaan we ervan uit dat je dat goed vindt. Meer weten? <a href="#">Lees onze cookiepagina</a></p>
 			</div>
@@ -102,14 +106,19 @@
 				<img src="assets/img/cookiemonster.jpg" alt="cookie monster">
 			</div>
 		</div>
-
-
 	</section>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="assets/jquery.min.js"></script>
 	<script>
-	$(document).ready(function(){
+	$(function(){
 		$(".cookie--close").click(function(){
 			$(this).closest('.cookie').toggleClass("ghost",true);
+		});
+		$(".btn--agree").click(function(){
+			$(this).closest('.cookie').toggleClass("ghost",true);
+		});
+		$(".btn--disagree").click(function(){
+			window.alert("Open pop-up om gebruiker te overtuigen om wel cookies te accepteren")
 		});
 
 		$('[id^=show-]').each(function (i) {
@@ -117,7 +126,6 @@
 				$('#cookie-'+ i).toggleClass("ghost", false);
 			});
 		});
-
 	});
 	</script>
 
